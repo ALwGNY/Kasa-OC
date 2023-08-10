@@ -1,0 +1,35 @@
+.dropdown {
+    margin: 15px 0px;
+    overflow: hidden;
+    width: 100%;
+    span {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(247, 72, 72);
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 10px;
+        z-index: 1;
+    }
+    .content { 
+        top: 33px;
+        z-index: -1;
+        color: rgb(250, 67, 67);
+        background-color: rgba(128, 128, 128, 0.178);
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 10px;
+        animation: dropdowntranslate 0.3s ease ;
+    }
+}
+
+@keyframes dropdowntranslate {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+    
+}

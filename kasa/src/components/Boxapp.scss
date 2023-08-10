@@ -1,0 +1,17 @@
+.boxapp {
+    margin: 50px 0px;
+    background-color: white;
+    min-height: 800px;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 768px){
+    .boxapp {
+        background-color: rgba(128, 128, 128, 0.178);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px
+    }
+}

@@ -1,0 +1,46 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    max-width: 80vw;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    width: 80%;
+    & img  {
+        width: 100px;
+    }
+    & .nav{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        font-size: 16px;
+    }
+    a {
+        text-decoration: none;
+        color: rgba(255, 0, 0, 0.774);
+    } 
+}
+
+@media screen and (min-width: 768px){
+    .navbar img {
+        width: 170px;
+    }
+    .nav p{
+        margin: 0px 15px;
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (min-width: 1440px){
+    .navbar img {
+        width: 200px;
+    }
+    .nav p{
+        font-size: 20px;
+    }
+
+}
+    

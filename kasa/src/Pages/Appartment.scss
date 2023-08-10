@@ -1,0 +1,135 @@
+.carrousel {
+    background-color:rgb(250, 67, 67);
+    height: 300px;
+    border-radius: 15px;
+    .bannerslide {
+        position: relative;
+    }
+    .fas {
+        position: absolute;
+        top: 260px;
+        color: white;
+        font-size: 60px;
+    }
+    .rightarrow {
+        position: absolute;
+        right: 150px;
+        transform: rotate(270deg);
+    }
+    .leftarrow {
+        position: absolute;
+        transform: rotate(90deg);
+    }
+}
+
+
+.app_header {
+    margin: 15px 0px 0px;
+    color:rgb(250, 67, 67);
+    h1 {
+        font-size: 28px;
+    }
+    h2, h3 {
+        font-size: 18px;
+        margin: 10px 0px;
+    }
+    .tag {
+        margin: 5px 0px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    & p { 
+        display: grid;
+        place-content: center;
+        color: white;
+        background-color:rgb(250, 67, 67);
+        min-width: 80px;
+        border-radius: 10px;
+        padding: 3px 12px;
+    }
+    .app_owner {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px 0px 0px;
+        .details {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 130px;
+        }
+        .badge img{
+            background-color: grey ;
+            height: 40px;
+            width: 40px;
+            border-radius: 40px;
+            margin-left: 10px;
+        
+        }
+        & .star .off{
+            color: gray;
+           
+        }     
+    }   
+}
+
+.app_collapse {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0px;
+    height: 150px;
+}
+
+@media screen and (min-width: 767px){
+    .app_header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .app_owner {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: end;
+            margin: 0px;
+            font-size: 20px;
+            .details {
+                margin: 0px;
+                width: 75%;
+            }
+            h3 {
+                display: flex;                
+                font-size: 20px;
+                margin: 0px;
+            }
+            .badge img{
+                width: 64px;
+                height: 64px;
+                border-radius: 64px;
+            }
+            .star {
+                margin-bottom: 8px
+            }
+            & i {
+                margin-left: 10px
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .carrousel {
+        height: 350px;
+    }
+    .app_collapse {
+        display: flex;
+        flex-direction: row;
+        gap: 70px  ;
+    }
+}
+
+
+
+
