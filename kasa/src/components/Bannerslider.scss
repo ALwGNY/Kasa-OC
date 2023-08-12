@@ -1,0 +1,44 @@
+
+.carrousel {
+    height: 300px;
+    position: relative;
+    & img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        opacity: 0;
+        }
+    & .show{
+        opacity: 1;
+    }        
+    .fa-solid {
+        position: absolute;
+        color: white;
+        font-size: 45px;
+        top: 45%;
+    }
+    .leftarrow {            
+        transform: rotate(270deg);
+        left: 1%;
+            
+    }
+    .rightarrow {
+        transform: rotate(90deg);
+        right: 1%
+    }
+    .counter {
+        position: absolute;
+        color: white;
+        left: 50%;
+        bottom: 1%;
+    }
+}
+
+
+@media screen and (min-width: 1024px){
+    .carrousel {
+        height: 350px;
+    }
+}

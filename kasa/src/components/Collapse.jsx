@@ -9,9 +9,10 @@ function Collapse(props) {
     }
 
     return <div className="dropdown">
-        <span className="name">{props.tittle}
+        <div className="name">
+        <h1>{props.title}</h1>
         <i className="fas fa-chevron-down" onClick={showContent}></i>
-        </span>
+        </div>
         {isContentVisible && <p className="content">{props.content}</p>}
     </div>
 }
