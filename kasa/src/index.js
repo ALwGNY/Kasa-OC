@@ -8,11 +8,11 @@ import App from './Pages/App';
 import reportWebVitals from './reportWebVitals';
 import Errorpage from './Pages/Errorpage';
 import About from './Pages/about';
-import Appartment from './Pages/Appartement';
+import Appartment from './Pages/Appartements';
 
 const router = createBrowserRouter([
   {
-    path: "/acceuil",
+    path: "/accueil",
     element: <App/>
   },
   {

@@ -3,7 +3,7 @@ import Navbar from "../layout/Navbar"
 import Main from "../components/Main"
 import Collapse from "../components/Collapse"
 import BannerSlider from "../components/Bannerslider"
-import "./Appartment.scss"
+import "./Appartements.scss"
 import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 

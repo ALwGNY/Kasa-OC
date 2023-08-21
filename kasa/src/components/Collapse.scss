@@ -20,13 +20,15 @@
 
     & .content {
         color: rgb(250, 67, 67);
-        background-color: rgba(128, 128, 128, 0.200);
+        background: rgba(246, 246, 246, 1);
         max-width: 100%;
         padding: 15px;
         border-radius: 10px;
         animation: dropdowntranslate 0.3s ease;
         position: relative;
         z-index: 1;
+        font-weight: 400;
+        
     }
 }
 
