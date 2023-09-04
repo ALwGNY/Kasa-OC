@@ -10,6 +10,7 @@ import Errorpage from './Pages/Errorpage';
 import About from './Pages/about';
 import Appartment from './Pages/Appartements';
 
+
 const router = createBrowserRouter([
   {
     path: "/",
