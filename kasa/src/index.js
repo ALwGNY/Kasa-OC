@@ -13,7 +13,7 @@ import Appartment from './Pages/Appartements';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/accueil",
     element: <App/>
   },
   {
