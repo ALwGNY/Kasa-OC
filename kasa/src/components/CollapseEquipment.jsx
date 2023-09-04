@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "../components/Collapse.scss"
 
-function CollapseAbout(props) {
+function CollapseEquiment(props) {
     const [isContentVisible, setIsContentVisible] = useState(false)
 
     const showContent = () => {
@@ -14,9 +14,13 @@ function CollapseAbout(props) {
         <i className="fas fa-chevron-down" onClick={showContent}></i>
         </div>
         {isContentVisible && (
-                <p className="content">{props.content}</p>
+                <ul className="content">
+                    {props.content.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
             )}
     </div>
 }
 
-export default CollapseAbout
+export default CollapseEquiment

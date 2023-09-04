@@ -6,6 +6,7 @@ import BannerSlider from "../components/Bannerslider"
 import "./Appartements.scss"
 import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
+import CollapseEquiment from "../components/CollapseEquipment"
 
 
 
@@ -59,7 +60,7 @@ function Appartment () {
     </div>
     <div className="app_collapse">
         <Collapse title="Description" content={selectedFlat.description}/>
-        <Collapse title="Equipements" content={selectedFlat.equipments}/>
+        <CollapseEquiment title="Equipements" content={selectedFlat.equipments}/>
     </div>
     </Main>
     <div className="footerposition">

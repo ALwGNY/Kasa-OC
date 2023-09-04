@@ -13,13 +13,7 @@ function Collapse(props) {
         <h1>{props.title}</h1>
         <i className="fas fa-chevron-down" onClick={showContent}></i>
         </div>
-        {isContentVisible && (
-                <ul className="content">
-                    {props.content.map((item, index) => (
-                        <li key={index}>{item}</li>
-                    ))}
-                </ul>
-            )}
+        {isContentVisible && <p className="content">{props.content}</p>}
     </div>
 }
 
