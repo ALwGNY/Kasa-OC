@@ -3,7 +3,7 @@ import Navbar from '../layout/Navbar'
 import Banner from '../components/Banner'
 import Main from '../components/Main'
 import Boxapp from '../components/Boxapp'
-import Footer from '../layout/Footer';
+import Footer from '../layout/Footer'
 
 
 function App() {
@@ -19,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

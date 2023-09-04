@@ -55,22 +55,18 @@ a .card p{
 
 @media screen and (min-width: 1024px){
     .card {
-        min-width: 300px;      
+        width: 100%;
+        flex-basis: 45%;      
         height: 300px;
-        margin: 25px;
+        margin: 20px;       
         h1 {
             font-size: 20px;
         }
     }
 }
 
-@media screen and (min-width: 1240px){
+@media screen and (min-width: 1440px){
     .card {
-    max-width: 400px;
-    }
-}
-@media screen and (min-width: 1240px){
-    .card {
-    max-width: 450px;
+    flex-basis: 29.3333333%; 
     }
 }
