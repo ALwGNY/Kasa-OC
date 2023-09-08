@@ -7,7 +7,7 @@ function Navbar () {
       <div className="navbar">       
         <img src="./Logo/_Header.png" alt="Logo kasa" />
         <nav className="nav">
-          <Link to="/accueil">
+          <Link to="/">
             <p>Accueil</p> 
           </Link>
           <Link to="/about">

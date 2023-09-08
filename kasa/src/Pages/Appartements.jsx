@@ -7,27 +7,39 @@ import "./Appartements.scss"
 import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import CollapseEquiment from "../components/CollapseEquipment"
+import { Navigate } from "react-router-dom"
+import Errorpage from "./Errorpage"
 
 
 
 function Appartment () {
     const location = useLocation()
-    console.log(location)
+    
     const [selectedFlat, setSelectedFlat] = useState()
+    const [error, setError] = useState(true)
 
     useEffect(fetchFlatData, [location.state]); 
 
     function fetchFlatData () {
+
     fetch ("db.json")
       .then ((res) => res.json())
       .then ((flats) => { 
         const flat = flats.find((flat) => flat.id === location.state.FlatId)
-        setSelectedFlat(flat)
+        if (flat) {
+            setSelectedFlat(flat);
+        }
+    
     })
       .catch(error => console.error('Erreur lors de la récupération JSON :', error));
+      setError(false)
     }
 
+    if (!error == true)
+    return <Navigate to='/*' />
+
     if (selectedFlat == null) return <div>...</div>
+
 
     return <div className="wrapper">
     <Navbar/>
@@ -53,7 +65,7 @@ function Appartment () {
             <div className="star">
             {[1, 2, 3, 4, 5].map((num) => (
                     <i key={num} className={"fa-solid fa-star" +
-                    ( selectedFlat.rating >= num ? " on" :"")}></i>)
+                    (selectedFlat.rating >= num ? " on" :"")}></i>)
                 )} 
             </div>   
         </div>

@@ -16,6 +16,7 @@ const BannerSlider = (props) => {
     const nextSlide = () => {
         setCurrentPicture((currentPicture + 1)% picture.length)
     }
+    
     const nextPrevious = () => {
         const newCurrentPicture = currentPicture -1
         if (newCurrentPicture < 0 ) {

@@ -13,29 +13,28 @@ import Appartment from './Pages/Appartements';
 
 const router = createBrowserRouter([
   {
-    path: "/accueil",
-    element: <App/>
+    path: '/',
+    element: <App />
   },
   {
-    path: '/about',
-    element: <About/> 
+    path:'/about',
+    element: <About/>
   },
   {
-    path: '/Appartement',
-    element: <Appartment/>
+    path: 'appartement/',
+    element: <Appartment />,
   },
   {
-    path:'/',
-    errorElement: <Errorpage/>
-  }
-
+    path: '*',
+    element: <Errorpage /> 
+  },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
-);
+)
 
 reportWebVitals();
