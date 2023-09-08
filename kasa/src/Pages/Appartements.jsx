@@ -12,32 +12,36 @@ import Errorpage from "./Errorpage"
 
 
 
-function Appartment () {
+function Appartment() {
     const location = useLocation()
-    
+  
     const [selectedFlat, setSelectedFlat] = useState()
-    const [error, setError] = useState(true)
-
-    useEffect(fetchFlatData, [location.state]); 
-
-    function fetchFlatData () {
-
-    fetch ("db.json")
-      .then ((res) => res.json())
-      .then ((flats) => { 
-        const flat = flats.find((flat) => flat.id === location.state.FlatId)
-        if (flat) {
-            setSelectedFlat(flat);
-        }
-    
-    })
-      .catch(error => console.error('Erreur lors de la récupération JSON :', error));
-      setError(false)
+    const [errorPage, setError] = useState(false)
+  
+    useEffect(() => {  
+        fetchFlatData()
+    }, [location.state])
+  
+    function fetchFlatData() {
+      fetch("db.json")
+        .then((res) => res.json())
+        .then((flats) => {
+          const flat = flats.find((flat) => flat.id === location.state.FlatId)
+          if (flat) {
+            setSelectedFlat(flat)
+          } else {
+            setError(true)
+          }
+        })
+        .catch((error) => {
+          console.error('Erreur lors de la récupération JSON :', error)
+          setError(true)
+        })
     }
-
-    if (!error == true)
-    return <Navigate to='/*' />
-
+  
+    if (errorPage) {
+      return <Navigate to='/error404' />
+    }
     if (selectedFlat == null) return <div>...</div>
 
 
