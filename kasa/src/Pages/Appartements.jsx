@@ -5,39 +5,44 @@ import Collapse from "../components/Collapse"
 import BannerSlider from "../components/Bannerslider"
 import "./Appartements.scss"
 import { useLocation } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import CollapseEquiment from "../components/CollapseEquipment"
 import { Navigate } from "react-router-dom"
-import Errorpage from "./Errorpage"
+
+
 
 
 
 function Appartment() {
-    const location = useLocation()
+  const location = useLocation()
   
-    const [selectedFlat, setSelectedFlat] = useState()
-    const [errorPage, setError] = useState(false)
-  
-    useEffect(() => {  
-        fetchFlatData()
-    }, [location.state])
-  
-    function fetchFlatData() {
-      fetch("db.json")
-        .then((res) => res.json())
-        .then((flats) => {
+  const [selectedFlat, setSelectedFlat] = useState()
+  const [errorPage, setError] = useState(false)
+
+  const fetchFlatData = useCallback(() => {
+    fetch("db.json")
+      .then((res) => res.json())
+      .then((flats) => {
+        if (location.state && location.state.FlatId) {
           const flat = flats.find((flat) => flat.id === location.state.FlatId)
           if (flat) {
             setSelectedFlat(flat)
           } else {
             setError(true)
           }
-        })
-        .catch((error) => {
-          console.error('Erreur lors de la récupération JSON :', error)
+        } else {
           setError(true)
-        })
-    }
+        }
+      })
+      .catch((error) => {
+        console.error('Erreur lors de la récupération JSON :', error)
+        setError(true)
+      })
+  }, [location.state])
+
+  useEffect(() => {  
+      fetchFlatData()
+  }, [fetchFlatData])
   
     if (errorPage) {
       return <Navigate to='/error404' />
