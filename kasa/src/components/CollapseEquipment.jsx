@@ -11,7 +11,7 @@ function CollapseEquiment(props) {
     return <div className="dropdown">
         <div className="name">
         <h1>{props.title}</h1>
-        <i className="fas fa-chevron-down" onClick={showContent}></i>
+        <i className={`fas fa-chevron-down ${isContentVisible ? 'rotate' : 'rotatereverse'}`} onClick={showContent}></i>
         </div>
         {isContentVisible && (
                 <ul className="content">
