@@ -1,7 +1,6 @@
 .boxapp {
     margin: 10px 0px;
     background-color: white;
-    max-height: 790px;
     overflow: hidden;
 }
 
@@ -12,14 +11,12 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        max-height: 1050px ;
         width: 100%;
     }
 }
 
 @media screen and (min-width: 1024px){
     .boxapp {
-        max-height: 1050px;
         background: rgba(246, 246, 246, 1);
         padding: 15px 5px;
         

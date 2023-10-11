@@ -16,10 +16,10 @@ function Boxapp () {
 
     return <div className="boxapp">
         {Flats.map((Flat, index) => {
-            if (index < 6) {
+            
                 return <Card id={Flat.id} title={Flat.title} imageUrl={Flat.cover} key={index}/>
-            }
-            return null
+            
+
             })}
 
         </div>

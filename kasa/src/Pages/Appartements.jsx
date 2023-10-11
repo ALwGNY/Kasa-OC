@@ -24,12 +24,15 @@ function Appartment() {
       .then((res) => res.json())
       .then((flats) => {
         if (location.state && location.state.FlatId) {
+
           const flat = flats.find((flat) => flat.id === location.state.FlatId)
+          
           if (flat) {
             setSelectedFlat(flat)
           } else {
             setError(true)
           }
+
         } else {
           setError(true)
         }
